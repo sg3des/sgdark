@@ -1,0 +1,155 @@
+* {
+	/*-GtkExpander-expander-size: 1;
+	-GtkProgressBar-min-horizontal-bar-height: 14;
+	-GtkProgressBar-min-vertical-bar-width: 14;*/
+	
+	/*-GtkScrollbar-has-backward-stepper: false;
+	-GtkScrollbar-has-forward-stepper: false;
+	-GtkScrolledWindow-scrollbar-spacing: 1;*/
+
+	-GtkTextView-error-underline-color: @error_color;
+	-GtkToolButton-icon-spacing: 2;
+	-GtkToolItemGroup-expander-size: 1;
+
+	-GtkTreeView-expander-size: 10;
+	-GtkTreeView-vertical-separator: 10;
+
+	/*-GtkProgressBar-min-horizontal-bar-height: 12;*/
+	/*-GtkProgressBar-min-vertical-bar-width: 12;*/
+
+	-GtkWindow-resize-grip-height: 1;
+	-GtkWindow-resize-grip-width: 1;
+	/*-WnckTasklist-fade-overlay-rect: 0;*/
+
+	/*border-width:1px;*/
+	border-radius: 0;
+	border-color: @border_color;
+	border-style: solid;
+	border-width:0;
+	/*background-image: none;*/
+	padding: 0;
+	margin: 0;
+	font-size:8px;
+	/*transition: none;*/
+	/*color: @text_color;*/
+	/*opacity: 1;*/
+	/*min-width: 12px;*/
+	/*min-height: 12px;*/
+	color:@text_color;
+}
+
+*:selected, *:selected:focus {background-color: @link_color; color: @selected_text_color;}
+*:checked{background-color: @link_color; color: @selected_text_color;}
+*:disabled, *:disabled:disabled {color: @insensitive_text_color;}
+*:disabled {-gtk-icon-effect: dim;}
+*:hover {-gtk-icon-effect: highlight;}
+box:hover *,entry:hover *, modelbutton:hover{background-color: @selected_bg_color;}
+box:active *,entry:active *, modelbutton:active{background-color: @link_color; color:@selected_text_color;}
+
+button{border: 1px solid @border_color; background-color: @button_color; color: @text_color; padding:0px;}
+button:hover{background-color: @selected_bg_color; color: @selected_text_color;}
+button:active{background-color: @selected_bg_color; color: @link_color;}
+button label{padding:2px; color:@selected_text_color;}
+modelbutton{padding: 2px;}
+widget{border-color: @border_color_alt;}
+
+headerbar,menubar{padding: 2px; background-color:@bg_color; border-bottom: 1px solid @border_color;}
+menubar{border-width:1px;}
+toolbar{border-bottom: 1px solid @border_color;}
+toolbar button{padding: 2px;}
+
+text{background-color: @bg_color;}
+
+notebook,toolbar,.background{background-color:@button_color;}
+/*notebook{border-width:1px;}*/
+notebook *:checked{background-color: @selected_bg_color;}
+
+tabs{border-width:0 0 1px 0;}
+tab{border-width:0 1px 0 0; padding:2px 10px; }
+tab:first-child{border-width:0 1px 0 1px;}
+tabs *:selected{background-color: @selected_bg_color; }
+
+treeview,list{background-color: @bg_color; padding-left: 4px;}
+
+menuitem{padding:2px 5px;}
+menu{border-width:1px;}
+menuitem:hover{background-color: @selected_bg_color; color: @selected_text_color;}
+menuitem:active{background-color: @selected_bg_color; color: @link_color;}
+
+toolbar button{border-width:0px;}
+
+stackswitcher button{border-left:0px;}
+stackswitcher{border-left:1px solid @border_color;}
+
+separator{background:#101010; min-height:1px; min-width:1px;}
+
+entry{border-width: 1px; padding-left: 2px;}
+/*box{min-width: 12px; min-height: 12px; border-left:0px;}*/
+
+/*scrolledwindow{border-width:1px;}*/
+scrollbar{min-width:1px; min-height: 8px; background-color: @button_color;}
+scrollbar *{min-width:0px; min-height:0px; padding:0px; margin:0px; border-width:0px;}
+scrollbar:hover{background-color: @button_color;}
+scrollbar button{opacity:0; min-width:0; min-height:0; border-width:0;}
+scrollbar trough{min-width: 8px; min-height: 8px;}
+scrollbar slider{background-color:@scroll_color; min-width:8px; min-height: 8px; margin:0px 0px 0 -3px; }
+
+
+
+popover{border-width:1px;}
+popover button{padding:0px 2px;}
+popover stack{margin:-5px;}
+switch{border-width:1px; font-size:7px;}
+switch slider{background-color: @scroll_color;min-height:14px; min-width:26px;}
+
+scale{min-width:8px;min-height:8px; margin:1px;}
+scale trough{background-color: @bg_color; border-width: 1px;}
+/*scale:hover{background-color: @bg_color;}*/
+scale slider{background-color:@scroll_color; min-width:10px; min-height:10px; border-width:0 1px; padding:1px;}
+slider:hover{background-color:@highlight_bg_color;}
+slider:active{background-color:@link_color;}
+scale indicator{color:@border_color; background:none;}
+
+
+indicator{background:@link_color;}
+
+progressbar{background:@bg_color; border-width:1px;}
+progress{background:@link_color;}
+
+levelbar block{background:@bg_color; border-width:1px;}
+
+calendar{border-width:1px;}
+
+
+treeview button{border-width:0px 1px 1px 0px;}
+
+
+arrow{border-width:1px; background:@bg_color;min-width:12px; min-height:12px;}
+arrow:hover{background: @selected_bg_color;}
+arrow:checked{background:@link_color;}
+
+
+combobox entry{border-width: 1px 0px 1px 1px;}
+combobox button{border-width: 0px;}
+combobox arrow{border-width:1px 1px 1px 1px;;}
+
+spinbutton{border-width:1px;}
+spinbutton entry{border-width: 1px 0px;}
+spinbutton button{border:0px;}
+
+frame{border-width:1px; padding:2px;}
+
+selection{background-color: @link_color;}
+
+
+@keyframes spin{to { -gtk-icon-transform: rotate(1turn); }}
+
+spinner{animation-name: spin; animation-duration: 1s; animation-timing-function: linear; animation-iteration-count: infinite;}
+
+spinner{padding:2px;background:none;}
+spinner:checked{color:@link_color;background:none;}
+/*
+.spinner {background-image: none; background-color: blue; opacity: 0; -gtk-icon-source: -gtk-icontheme("process-working-symbolic");}
+.spinner:active {opacity: 1;}*/
+check,radio{background:@border_color;}
+/*check,radio{border-width:1px;}*/

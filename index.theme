@@ -1,0 +1,10 @@
+[Desktop Entry]
+Type=X-GNOME-Metatheme
+Name=sgdark
+Comment=Compact minimalist dark theme
+Encoding=UTF-8
+
+[X-GNOME-Metatheme]
+GtkTheme=sgdark
+MetacityTheme=sgdark
+ButtonLayout=:minimize,maximize,close
