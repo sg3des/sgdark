@@ -53,6 +53,9 @@ button label{padding:2px; color:@selected_text_color;}
 modelbutton{padding: 2px;}
 widget{border-color: @border_color_alt;}
 
+button.small-button{border:none; background:none; margin:-2px -2px -2px 0px; padding:0; opacity: 0.3}
+button.small-button:hover{ opacity: 0.8;}
+
 headerbar,menubar{padding: 2px; background-color:@bg_color; border-bottom: 1px solid @border_color;}
 menubar{border-width:1px;}
 toolbar{border-bottom: 1px solid @border_color;}
@@ -61,15 +64,17 @@ toolbar button{padding: 2px;}
 text{background-color: @bg_color;}
 
 notebook,toolbar,.background{background-color:@button_color;}
-/*notebook{border-width:1px;}*/
+.frame{border-width:1px;}
+/*.frame list{border-width: 0px;}*/
 notebook *:checked{background-color: @selected_bg_color;}
+notebook button{margin: -1px;}
 
-tabs{border-width:0 0 1px 0;}
-tab{border-width:0 1px 0 0; padding:2px 10px; }
-tab:first-child{border-width:0 1px 0 1px;}
+tabs{border-width: 1px; margin: -1px;}
+tab{padding: 2px 10px; border-width: 0.5px; margin: -1px;}
 tabs *:selected{background-color: @selected_bg_color; }
 
 treeview,list{background-color: @bg_color; padding-left: 4px;}
+treeview button:last-child{border-right-width: 0px;}
 
 menuitem{padding:2px 5px;}
 menu{border-width:1px;}
@@ -84,9 +89,12 @@ stackswitcher{border-left:1px solid @border_color;}
 separator{background:#101010; min-height:1px; min-width:1px;}
 
 entry{border-width: 1px; padding-left: 2px;}
+/*entry spinbutton{border-width: 0px;}*/
 /*box{min-width: 12px; min-height: 12px; border-left:0px;}*/
 
-/*scrolledwindow{border-width:1px;}*/
+scrolledwindow{border-width:1px;}
+scrolledwindow > *{border-width: 0px;}
+scrolledwindow > .frame{border-width: 0px;}
 scrollbar{min-width:1px; min-height: 8px; background-color: @button_color;}
 scrollbar *{min-width:0px; min-height:0px; padding:0px; margin:0px; border-width:0px;}
 scrollbar:hover{background-color: @button_color;}
@@ -125,16 +133,17 @@ treeview button{border-width:0px 1px 1px 0px;}
 
 
 arrow{border-width:1px; background:@bg_color;min-width:12px; min-height:12px;}
+/*arrow{border-width:1px; min-width:12px; min-height:12px;}*/
 arrow:hover{background: @selected_bg_color;}
 arrow:checked{background:@link_color;}
 
 
 combobox entry{border-width: 1px 0px 1px 1px;}
 combobox button{border-width: 0px;}
-combobox arrow{border-width:1px 1px 1px 1px;;}
+combobox arrow{border-width:1px;  -gtk-icon-source: -gtk-icontheme("pan-down-symbolic");}
 
 spinbutton{border-width:1px;}
-spinbutton entry{border-width: 1px 0px;}
+spinbutton entry{border-width: 0 0.5px 0 0; padding: 0 3px;}
 spinbutton button{border:0px;}
 
 frame{border-width:1px; padding:2px;}
@@ -148,6 +157,7 @@ spinner{animation-name: spin; animation-duration: 1s; animation-timing-function:
 
 spinner{padding:2px;background:none;}
 spinner:checked{color:@link_color;background:none;}
+spinner:insensitive{animation-name: none;}
 /*
 .spinner {background-image: none; background-color: blue; opacity: 0; -gtk-icon-source: -gtk-icontheme("process-working-symbolic");}
 .spinner:active {opacity: 1;}*/
