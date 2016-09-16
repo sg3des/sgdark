@@ -8,6 +8,8 @@
 @define-color button_color #252525;
 
 @define-color text_color #ddd;
+@define-color thin_text_color #bbb;
+@define-color icon_color #aaa;
 @define-color base_color #666666;
 @define-color selected_text_color #ffffff;
 @define-color insensitive_text_color #444;

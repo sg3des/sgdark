@@ -13,6 +13,7 @@
 
 	-GtkTreeView-expander-size: 10;
 	-GtkTreeView-vertical-separator: 10;
+	-GtkTreeView-row-height: 10;
 
 	/*-GtkProgressBar-min-horizontal-bar-height: 12;*/
 	/*-GtkProgressBar-min-vertical-bar-width: 12;*/
@@ -33,10 +34,11 @@
 	/*transition: none;*/
 	/*color: @text_color;*/
 	/*opacity: 1;*/
-	/*min-width: 12px;*/
-	/*min-height: 12px;*/
+	min-width: 0;
+	min-height: 0;
 	color:@text_color;
 }
+
 
 *:selected, *:selected:focus {background-color: @link_color; color: @selected_text_color;}
 *:checked{background-color: @link_color; color: @selected_text_color;}
@@ -52,6 +54,8 @@ button:active{background-color: @selected_bg_color; color: @link_color;}
 button label{padding:2px; color:@selected_text_color;}
 modelbutton{padding: 2px;}
 widget{border-color: @border_color_alt;}
+.path-bar *:checked{background-color: @selected_bg_color; }
+.path-bar .toggle{padding: 0 2px; border-width:1px 0;}
 
 button.small-button{border:none; background:none; margin:-2px -2px -2px 0px; padding:0; opacity: 0.3}
 button.small-button:hover{ opacity: 0.8;}
@@ -61,10 +65,14 @@ menubar{border-width:1px;}
 toolbar{border-bottom: 1px solid @border_color;}
 toolbar button{padding: 2px;}
 
+.sidebar label{color:@thin_text_color;}
 text{background-color: @bg_color;}
 
 notebook,toolbar,.background{background-color:@button_color;}
-.frame{border-width:1px;}
+.frame{border-width:1px; margin: -1px; padding: 1px;}
+.frame > .frame{border-width: 0;}
+.frame list{border-width: 0;}
+notebook treeview,notebook scrolledwindow{border-width: 0}
 /*.frame list{border-width: 0px;}*/
 notebook *:checked{background-color: @selected_bg_color;}
 notebook button{margin: -1px;}
@@ -73,7 +81,11 @@ tabs{border-width: 1px; margin: -1px;}
 tab{padding: 2px 10px; border-width: 0.5px; margin: -1px;}
 tabs *:selected{background-color: @selected_bg_color; }
 
-treeview,list{background-color: @bg_color; padding-left: 4px;}
+treeview{background-color: @bg_color; padding-left: 4px;}
+list{}
+row{padding: 2px;}
+row box > image{margin-right: 4px;}
+image{color:@icon_color;}
 treeview button:last-child{border-right-width: 0px;}
 
 menuitem{padding:2px 5px;}
@@ -86,7 +98,7 @@ toolbar button{border-width:0px;}
 stackswitcher button{border-left:0px;}
 stackswitcher{border-left:1px solid @border_color;}
 
-separator{background:#101010; min-height:1px; min-width:1px;}
+separator{background:@border_color; min-height:1px; min-width:1px;}
 
 entry{border-width: 1px; padding-left: 2px;}
 /*entry spinbutton{border-width: 0px;}*/
@@ -95,6 +107,7 @@ entry{border-width: 1px; padding-left: 2px;}
 scrolledwindow{border-width:1px;}
 scrolledwindow > *{border-width: 0px;}
 scrolledwindow > .frame{border-width: 0px;}
+scrolledwindow > treeview{border-width: 0px;}
 scrollbar{min-width:1px; min-height: 8px; background-color: @button_color;}
 scrollbar *{min-width:0px; min-height:0px; padding:0px; margin:0px; border-width:0px;}
 scrollbar:hover{background-color: @button_color;}
@@ -157,7 +170,7 @@ spinner{animation-name: spin; animation-duration: 1s; animation-timing-function:
 
 spinner{padding:2px;background:none;}
 spinner:checked{color:@link_color;background:none;}
-spinner:insensitive{animation-name: none;}
+spinner:disabled{animation-name: none;}
 /*
 .spinner {background-image: none; background-color: blue; opacity: 0; -gtk-icon-source: -gtk-icontheme("process-working-symbolic");}
 .spinner:active {opacity: 1;}*/
