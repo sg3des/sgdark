@@ -28,6 +28,7 @@
 	border-style: solid;
 	border-width:0;
 	/*background-image: none;*/
+	/*background-color: @bg_color;*/
 	padding: 0;
 	margin: 0;
 	font-size:8px;
@@ -39,6 +40,7 @@
 	color:@text_color;
 }
 
+window{background-color: @bg_color;}
 
 *:selected, *:selected:focus {background-color: @link_color; color: @selected_text_color;}
 *:checked{background-color: @link_color; color: @selected_text_color;}
@@ -57,18 +59,20 @@ widget{border-color: @border_color_alt;}
 .path-bar *:checked{background-color: @selected_bg_color; }
 .path-bar .toggle{padding: 0 2px; border-width:1px 0;}
 
-button.small-button{border:none; background:none; margin:-2px -2px -2px 0px; padding:0; opacity: 0.3}
-button.small-button:hover{ opacity: 0.8;}
+/*close button*/
+tabs button{border:none; background:none; margin:-2px -2px -2px 0px; padding:0;}
+tabs button image{color: @thin_text_color;}
+tabs button:hover{ opacity: 0.8;}
 
-headerbar,menubar{padding: 2px; background-color:@bg_color; border-bottom: 1px solid @border_color;}
-menubar{border-width:1px;}
-toolbar{border-bottom: 1px solid @border_color;}
-toolbar button{padding: 2px;}
+headerbar,menubar{padding: 2px; background-color:@bg_color;}
+/*menubar{border-width:1px;}*/
+/*toolbar{border-bottom: 1px solid @border_color;}*/
+toolbar button{padding: 2px; border-width:0px;}
 
 .sidebar label{color:@thin_text_color;}
-text{background-color: @bg_color;}
+/*text{background-color: @bg_color;}*/
 
-notebook,toolbar,.background{background-color:@button_color;}
+/*toolbar,.background{background-color:@button_color;}*/
 .frame{border-width:1px; margin: -1px; padding: 1px;}
 .frame > .frame{border-width: 0;}
 .frame list{border-width: 0;}
@@ -77,30 +81,38 @@ notebook treeview,notebook scrolledwindow{border-width: 0}
 notebook *:checked{background-color: @selected_bg_color;}
 notebook button{margin: -1px;}
 
-tabs{border-width: 1px; margin: -1px;}
+tabs{border-width: 1px; margin: -2px;}
 tab{padding: 2px 10px; border-width: 0.5px; margin: -1px;}
 tabs *:selected{background-color: @selected_bg_color; }
 
-treeview{background-color: @bg_color; padding-left: 4px;}
-list{}
+/*treeview{background-color: @bg_color; padding-left: 4px;}*/
+
 row{padding: 2px;}
 row box > image{margin-right: 4px;}
 image{color:@icon_color;}
 treeview button:last-child{border-right-width: 0px;}
+
+treeview,paned{background-color: @bg_color_alt;}
+list{background-color: @bg_color;}
+
+paned{border-width: 1px;}
 
 menuitem{padding:2px 5px;}
 menu{border-width:1px;}
 menuitem:hover{background-color: @selected_bg_color; color: @selected_text_color;}
 menuitem:active{background-color: @selected_bg_color; color: @link_color;}
 
-toolbar button{border-width:0px;}
+
 
 stackswitcher button{border-left:0px;}
 stackswitcher{border-left:1px solid @border_color;}
 
 separator{background:@border_color; min-height:1px; min-width:1px;}
+.horizontal separator{margin:5px 0;}
+.vertical separator{margin:0 5px;}
 
-entry{border-width: 1px; padding-left: 2px;}
+entry{border-width: 1px; padding-left: 2px; background-color: @bg_color_alt;}
+toolbar entry{margin:3px;}
 /*entry spinbutton{border-width: 0px;}*/
 /*box{min-width: 12px; min-height: 12px; border-left:0px;}*/
 
@@ -176,3 +188,7 @@ spinner:disabled{animation-name: none;}
 .spinner:active {opacity: 1;}*/
 check,radio{background:@border_color;}
 /*check,radio{border-width:1px;}*/
+
+
+
+.subtitle image{margin:-3px;}
