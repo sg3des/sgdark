@@ -41,6 +41,11 @@
 }
 
 window{background-color: @bg_color;}
+dialog,assistant,printdialog,messagedialog{background-color:@bg_color;}
+
+treeview,paned,popover,textview{background-color: @bg_color_alt;}
+list{background-color: @bg_color;}
+
 
 *:selected, *:selected:focus {background-color: @link_color; color: @selected_text_color;}
 *:checked{background-color: @link_color; color: @selected_text_color;}
@@ -50,10 +55,17 @@ window{background-color: @bg_color;}
 box:hover *,entry:hover *, modelbutton:hover{background-color: @selected_bg_color;}
 box:active *,entry:active *, modelbutton:active{background-color: @link_color; color:@selected_text_color;}
 
+.info, .info label{color:@info_fg_color;}
+.warning, .warning label{color:@warning_fg_color;}
+.question, .question label{color:@question_fg_color;}
+.error, .error label{color:@error_fg_color;}
+
+
 button{border: 1px solid @border_color; background-color: @button_color; color: @text_color; padding:0px;}
 button:hover{background-color: @selected_bg_color; color: @selected_text_color;}
 button:active{background-color: @selected_bg_color; color: @link_color;}
 button label{padding:2px; color:@selected_text_color;}
+buttonbox button label{margin-top:4px;}
 modelbutton{padding: 2px;}
 widget{border-color: @border_color_alt;}
 .path-bar *:checked{background-color: @selected_bg_color; }
@@ -81,7 +93,7 @@ notebook treeview,notebook scrolledwindow{border-width: 0}
 notebook *:checked{background-color: @selected_bg_color;}
 notebook button{margin: -1px;}
 
-tabs{border-width: 1px; margin: -2px;}
+tabs{border-width: 1px;}
 tab{padding: 2px 10px; border-width: 0.5px; margin: -1px;}
 tabs *:selected{background-color: @selected_bg_color; }
 
@@ -92,8 +104,7 @@ row box > image{margin-right: 4px;}
 image{color:@icon_color;}
 treeview button:last-child{border-right-width: 0px;}
 
-treeview,paned{background-color: @bg_color_alt;}
-list{background-color: @bg_color;}
+
 
 paned{border-width: 1px;}
 
