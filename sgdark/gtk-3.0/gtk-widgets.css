@@ -76,10 +76,11 @@ tabs button{border:none; background:none; margin:-2px -2px -2px 0px; padding:0;}
 tabs button image{color: @thin_text_color;}
 tabs button:hover{ opacity: 0.8;}
 
-headerbar,menubar{padding: 2px; background-color:@bg_color;}
+headerbar,menubar{background-color:@bg_color;}
 /*menubar{border-width:1px;}*/
 /*toolbar{border-bottom: 1px solid @border_color;}*/
 toolbar button{padding: 2px; border-width:0px;}
+
 
 .sidebar label{color:@thin_text_color;}
 /*text{background-color: @bg_color;}*/
@@ -107,6 +108,9 @@ treeview button:last-child{border-right-width: 0px;}
 
 
 paned{border-width: 1px;}
+paned > frame,paned > box > frame{border-width: 0;}
+paned > scrolledwindow,paned > box > scrolledwindow{border-width: 0;}
+scrolledwindow > treeview{border-width: 0;}
 
 menuitem{padding:2px 5px;}
 menu{border-width:1px;}
