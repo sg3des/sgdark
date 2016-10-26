@@ -48,7 +48,7 @@ list{background-color: @bg_color;}
 
 
 *:selected, *:selected:focus {background-color: @link_color; color: @selected_text_color;}
-*:checked{background-color: @link_color; color: @selected_text_color;}
+/**:checked{background-color: @link_color; color: @selected_text_color;}*/
 *:disabled, *:disabled:disabled {color: @insensitive_text_color;}
 *:disabled {-gtk-icon-effect: dim;}
 *:hover {-gtk-icon-effect: highlight;}
@@ -59,6 +59,7 @@ box:active *,entry:active *, modelbutton:active{background-color: @link_color; c
 .warning, .warning label{color:@warning_fg_color;}
 .question, .question label{color:@question_fg_color;}
 .error, .error label{color:@error_fg_color;}
+/*label{color:@text_color;}*/
 
 
 button{border: 1px solid @border_color; background-color: @button_color; color: @text_color; padding:0px;}
@@ -78,7 +79,7 @@ tabs button image{color: @thin_text_color;}
 tabs button:hover{ opacity: 0.8;}
 
 headerbar,menubar{background-color:@bg_color; color: @icon_color;}
-/*menubar{border-width:1px;}*/
+headerbar,menubar{border-bottom-width:1px; margin:0 0 -1px 0;}
 /*toolbar{border-bottom: 1px solid @border_color;}*/
 toolbar button{padding: 2px; border-width:0px;}
 headerbar button{border-width: 0px; padding: 2px;}
@@ -111,7 +112,8 @@ treeview button:last-child{border-right-width: 0px;}
 
 
 
-paned{border-width: 1px;}
+paned{border-width: 0px;}
+/*box > paned{border-width:0px;}*/
 paned > frame,paned > box > frame{border-width: 0;}
 paned > scrolledwindow,paned > box > scrolledwindow{border-width: 0;}
 scrolledwindow > treeview{border-width: 0;}
@@ -130,7 +132,7 @@ separator{background:@border_color; min-height:1px; min-width:1px;}
 .horizontal separator{margin:5px 0;}
 .vertical separator{margin:0 5px;}
 
-entry{border-width: 1px; padding-left: 2px; background-color: @bg_color_alt;}
+entry{border-width: 1px; padding-left: 2px; background-color: @bg_color_alt; color: @text_color;}
 toolbar entry{margin:3px;}
 /*entry spinbutton{border-width: 0px;}*/
 /*box{min-width: 12px; min-height: 12px; border-left:0px;}*/
@@ -205,7 +207,9 @@ spinner:disabled{animation-name: none;}
 /*
 .spinner {background-image: none; background-color: blue; opacity: 0; -gtk-icon-source: -gtk-icontheme("process-working-symbolic");}
 .spinner:active {opacity: 1;}*/
-check,radio{background:@border_color;}
+checkbutton > check,radiobutton > radio{background:@bg_color_alt; border-color: @border_color; margin:0 2px; border-width:1px;;}
+checkbutton:checked > check, radiobutton:checked > radio{color:@selected_text_color;}
+checkbutton:hover > check,   radiobutton:hover > radio{background:@selected_bg_color;}
 /*check,radio{border-width:1px;}*/
 
 

@@ -265,8 +265,9 @@ style "murrine-treeview" {
 }
 
 style "murrine-frame-title" {
-	fg[NORMAL] = lighter (@fg_color)
+	fg[NORMAL] = @fg_color
 }
+
 
 style "murrine-tooltips" {
 	xthickness = 2
@@ -596,6 +597,16 @@ widget_class "*ThunarShortcutsView*" style "sidepane"
 widget_class "*ThunarTreeView*" style "sidepane"
 widget_class "*ThunarLocationEntry*" style "murrine-entry"
 
+# S7 styles
+
+# style "murrine-event-label" {
+# 	text[NORMAL] = shade(0.00, @base_color)
+# }
+
+# widget_class "<GtkWindow>" style "murrine-event-label"
+# widget_class "<LCLWinapiClient>*" style "murrine-event-label"
+
+
 # Gtk2 Open-File Dialog
 
 widget_class "*GtkFileChooserWidget.GtkFileChooserDefault.GtkVBox.GtkHPaned.GtkVBox.GtkScrolledWindow.GtkTreeView*" style "sidepane"
@@ -628,6 +639,8 @@ style "chrome-gtk-frame" {
 	ChromeGtkFrame::scrollbar-slider-prelight-color =  mix (0.31, @fg_color, @bg_color)
 }
 
+
+
 class "ChromeGtkFrame" style "chrome-gtk-frame"
 
 widget_class "*Chrom*Button*" style "chromium-toolbar-button"
@@ -657,6 +670,7 @@ class "GtkCheck*" style "murrine-radiocheck"
 
 class "GtkEntry" style "murrine-entry"
 
+
 widget_class "*<GtkNotebook>" style "murrine-notebook"
 widget_class "*<GtkNotebook>*<GtkEventBox>" style "murrine-notebook-bg"
 widget_class "*<GtkNotebook>*<GtkDrawingArea>" style "murrine-notebook-bg"
@@ -684,7 +698,6 @@ widget_class "*GtkMenuToolButton*" style "murrine-toolbutton"
 widget_class "*GtkToolbar*Button" style "murrine-toolbutton"
 
 widget_class "*.<GtkFrame>.<GtkLabel>" style "murrine-frame-title"
-
 widget_class "*.<GtkTreeView>*" style "murrine-treeview"
 widget_class "*.<GtkTreeView>.<GtkButton>" style "murrine-treeview-header"
 widget_class "*.<GtkCTree>.<GtkButton>" style "murrine-treeview-header"
@@ -694,6 +707,9 @@ widget_class "*.<GtkCList>.<GtkButton>" style "murrine-treeview-header"
 widget "gtk-tooltip*" style "murrine-tooltips"
 
 widget_class "*<GtkScrolledWindow>*<OsScrollbar>" style "murrine-overlay-scrollbar"
+
+
+
 
 # Workarounds and Non-Standard Styling
 
