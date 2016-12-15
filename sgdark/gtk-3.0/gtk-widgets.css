@@ -68,7 +68,8 @@ button:active{background-color: @selected_bg_color; color: @link_color;}
 button:disabled{background-color: @bg_color_disabled;}
 button:checked{border-color:@link_color;}
 button label{padding:2px; color:@text_color;}
-button image{-gtk-icon-transform: scale(0.75);}
+
+image{-gtk-icon-transform: scale(0.75);}
 
 
 buttonbox button label{margin-top:4px;}
@@ -232,3 +233,7 @@ radiobutton radio{border-radius:50%;}
 
 
 .subtitle image{margin:-3px;}
+
+
+
+headerbar label{margin:-1px;}
