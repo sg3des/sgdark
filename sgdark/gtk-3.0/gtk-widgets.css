@@ -49,7 +49,7 @@ list{background-color: @bg_color;}
 
 *:selected, *:selected:focus {background-color: @link_color; color: @selected_text_color;}
 /**:checked{background-color: @link_color; color: @selected_text_color;}*/
-*:disabled, *:disabled:disabled {color: @insensitive_text_color;}
+*:disabled, *:disabled:disabled{color: @insensitive_text_color;}
 *:disabled {-gtk-icon-effect: dim;}
 *:hover {-gtk-icon-effect: highlight;}
 box:hover *,entry:hover *, modelbutton:hover{background-color: @selected_bg_color;}
@@ -62,13 +62,19 @@ box:active *,entry:active *, modelbutton:active{background-color: @link_color; c
 /*label{color:@text_color;}*/
 
 
-button{border: 1px solid @border_color; background-color: @button_color; color: @text_color; padding:0px;}
-button:hover{background-color: @selected_bg_color; color: @selected_text_color;}
+button{border: 1px solid @border_color; background-color: @button_color; color: @text_color; padding:1px 0px;}
+button:hover label{color: @selected_text_color;}
 button:active{background-color: @selected_bg_color; color: @link_color;}
-button label{padding:2px; color:@selected_text_color;}
+button:disabled{background-color: @bg_color_disabled;}
+button:checked{border-color:@link_color;}
+button label{padding:2px; color:@text_color;}
+button image{-gtk-icon-transform: scale(0.75);}
+
+
 buttonbox button label{margin-top:4px;}
 modelbutton{padding: 2px;}
 widget{border-color: @border_color_alt;}
+
 
 
 /*.path-bar .toggle{padding: 0 2px; border-width:1px 0;}*/
@@ -78,11 +84,12 @@ tabs button{border:none; background:none; margin:-2px -2px -2px 0px; padding:0;}
 tabs button image{color: @thin_text_color;}
 tabs button:hover{ opacity: 0.8;}
 
+
 headerbar,menubar{background-color:@bg_color; color: @icon_color;}
-headerbar,menubar{border-bottom-width:1px; margin:0 0 -1px 0;}
-/*toolbar{border-bottom: 1px solid @border_color;}*/
-toolbar button{padding: 2px; border-width:0px;}
-headerbar button{border-width: 0px; padding: 2px;}
+
+toolbar button{padding: 2px; border-width:0px; background-color: @bg_color; }
+headerbar button{border-width: 0px; padding: 2px; background-color: @bg_color;}
+headerbar button:disabled,menubar button:disabled,toolbar button:disabled{background-color: @bg_color}
 headerbar widget.path-bar{border-width:1px;}
 .path-bar *:checked{background-color: @selected_bg_color; }
 
@@ -132,8 +139,10 @@ separator{background:@border_color; min-height:1px; min-width:1px;}
 .horizontal separator{margin:5px 0;}
 .vertical separator{margin:0 5px;}
 
-entry{border-width: 1px; padding-left: 2px; background-color: @bg_color_alt; color: @text_color;}
+entry{border-width: 1px; padding: 2px; margin:1px; background-color: @bg_color_alt; color: @text_color;}
+entry:disabled{border-width: 0px; background: none;}
 toolbar entry{margin:3px;}
+
 /*entry spinbutton{border-width: 0px;}*/
 /*box{min-width: 12px; min-height: 12px; border-left:0px;}*/
 
@@ -156,13 +165,14 @@ popover stack{margin:-5px;}
 switch{border-width:1px; font-size:7px;}
 switch slider{background-color: @scroll_color;min-height:14px; min-width:26px;}
 
-scale{min-width:8px;min-height:8px; margin:1px;}
+scale{min-width:8px;min-height:8px; margin:5px;}
 scale trough{background-color: @bg_color; border-width: 1px;}
 /*scale:hover{background-color: @bg_color;}*/
-scale slider{background-color:@scroll_color; min-width:10px; min-height:10px; border-width:0 1px; padding:1px;}
+scale slider{background-color:@scroll_color; min-width:10px; min-height:10px; border-width:0 1px; padding:1px; margin:-4px;}
 slider:hover{background-color:@highlight_bg_color;}
 slider:active{background-color:@link_color;}
 scale indicator{color:@border_color; background:none;}
+highlight{background:@link_color;}
 
 
 indicator{background:@link_color;}
@@ -184,11 +194,15 @@ arrow:hover{background: @selected_bg_color;}
 arrow:checked{background:@link_color;}
 
 
-combobox entry{border-width: 1px 0px 1px 1px;}
+combobox{border-width:1px; margin:1px;}
+combobox arrow{padding:2px; border-width:0px; border-left-width:1px;  -gtk-icon-source: -gtk-icontheme("pan-down-symbolic");}
+combobox entry{border-width: 0px;}
+/*combobox entry{border-width: 1px 0px 1px 1px;}*/
 combobox button{border-width: 0px;}
-combobox arrow{border-width:1px;  -gtk-icon-source: -gtk-icontheme("pan-down-symbolic");}
+
 
 spinbutton{border-width:1px;}
+spinbutton:disabled{border-width: 0px;}
 spinbutton entry{border-width: 0 0.5px 0 0; padding: 0 3px;}
 spinbutton button{border:0px;}
 
@@ -207,9 +221,12 @@ spinner:disabled{animation-name: none;}
 /*
 .spinner {background-image: none; background-color: blue; opacity: 0; -gtk-icon-source: -gtk-icontheme("process-working-symbolic");}
 .spinner:active {opacity: 1;}*/
+checkbutton,radiobutton{font-size: 100%; margin:1px;}
 checkbutton > check,radiobutton > radio{background:@bg_color_alt; border-color: @border_color; margin:0 2px; border-width:1px;;}
 checkbutton:checked > check, radiobutton:checked > radio{color:@selected_text_color;}
 checkbutton:hover > check,   radiobutton:hover > radio{background:@selected_bg_color;}
+checkbutton check,radiobutton radio{-gtk-icon-transform:scale(0.75);}
+radiobutton radio{border-radius:50%;}
 /*check,radio{border-width:1px;}*/
 
 
