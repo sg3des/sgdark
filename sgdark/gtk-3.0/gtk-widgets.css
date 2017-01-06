@@ -67,7 +67,7 @@ button:hover label{color: @selected_text_color;}
 button:active{background-color: @selected_bg_color; color: @link_color;}
 button:disabled{background-color: @bg_color_disabled;}
 button:checked{border-color:@link_color;}
-button label{padding:2px; color:@text_color;}
+button label{padding:2px; margin:2px; color:@text_color;}
 
 image{-gtk-icon-transform: scale(0.75);}
 
@@ -107,8 +107,9 @@ notebook treeview,notebook scrolledwindow{border-width: 0}
 notebook *:checked{background-color: @selected_bg_color;}
 notebook button{margin: -1px;}
 
-tabs{border-width: 1px;}
-tab{padding: 2px 10px; border-width: 0.5px; margin: -1px;}
+header button{margin: -2px;}
+tabs{border-width: 1px; margin:-1px;}
+tab{padding: 2px 10px; border-width: 0px; margin: -0.5px;}
 tabs *:selected{background-color: @selected_bg_color; }
 
 /*treeview{background-color: @bg_color; padding-left: 4px;}*/
@@ -151,12 +152,14 @@ scrolledwindow{border-width:1px;}
 scrolledwindow > *{border-width: 0px;}
 scrolledwindow > .frame{border-width: 0px;}
 scrolledwindow > treeview{border-width: 0px;}
-scrollbar{min-width:1px; min-height: 8px; background-color: @button_color;}
-scrollbar *{min-width:0px; min-height:0px; padding:0px; margin:0px; border-width:0px;}
-scrollbar:hover{background-color: @button_color;}
-scrollbar button{opacity:0; min-width:0; min-height:0; border-width:0;}
-scrollbar trough{min-width: 8px; min-height: 8px;}
-scrollbar slider{background-color:@scroll_color; min-width:8px; min-height: 8px; margin:0px 0px 0 -3px; }
+
+scrollbar.vertical{margin:2px 0px 0px -4px;}
+scrollbar.horizontal{margin:-4px 0px 0px 0px ;}
+scrollbar button{border:none; padding:0px; margin:0px;}
+scrollbar slider{background:@selected_bg_color; min-width:6px; min-height:6px;}
+scrollbar slider:hover{background:@highlight_bg_color;}
+scrollbar slider:active{background:@link_color;}
+
 
 
 
