@@ -85,6 +85,10 @@ tabs button{border:none; background:none; margin:-2px -2px -2px 0px; padding:0;}
 tabs button image{color: @thin_text_color;}
 tabs button:hover{ opacity: 0.8;}
 
+/*hide close button*/
+/*tab button{border:none; background:none;}*/
+/*tab button > image{-gtk-icon-transform: scale(0);}*/
+
 
 headerbar,menubar{background-color:@bg_color; color: @icon_color;}
 
@@ -107,9 +111,28 @@ notebook treeview,notebook scrolledwindow{border-width: 0}
 notebook *:checked{background-color: @selected_bg_color;}
 notebook button{margin: -1px;}
 
-header button{margin: -2px;}
-tabs{border-width: 1px; margin:-1px;}
-tab{padding: 2px 10px; border-width: 0px; margin: -0.5px;}
+notebook header arrow{border:none;}
+notebook header button{margin: -2px;}
+notebook header{margin:-1px;}
+notebook header.top{border-bottom-width:1px;}
+notebook header.bottom{border-top-width:1px;}
+notebook header.left{border-right-width:1px;}
+notebook header.right{border-left-width:1px;}
+
+notebook header.top tab:first-child{border-left-width:0;}
+notebook header.top tab{border-left-width:1px;}
+
+notebook header.bottom tab:first-child{border-left-width:0;}
+notebook header.bottom tab{border-left-width:1px;}
+
+notebook header.left tab:first-child{border-top-width:0;}
+notebook header.left tab{border-top-width:1px;}
+
+notebook header.right tab:first-child{border-top-width:0;}
+notebook header.right tab{border-top-width:1px;}
+
+/*tabs{margin:-1px;}*/
+tab{padding: 2px 10px;}
 tabs *:selected{background-color: @selected_bg_color; }
 
 /*treeview{background-color: @bg_color; padding-left: 4px;}*/
@@ -131,6 +154,9 @@ menuitem{padding:2px 5px;}
 menu{border-width:1px;}
 menuitem:hover{background-color: @selected_bg_color; color: @selected_text_color;}
 menuitem:active{background-color: @selected_bg_color; color: @link_color;}
+
+menu menuitem label{padding-right:10px;}
+accelerator{color:@insensitive_text_color;}
 
 
 stackswitcher button:checked{background-color: @insensitive_text_color;}
@@ -210,7 +236,8 @@ spinbutton:disabled{border-width: 0px;}
 spinbutton entry{border-width: 0 0.5px 0 0; padding: 0 3px;}
 spinbutton button{border:0px;}
 
-frame{border-width:1px; padding:2px;}
+/*frame{border-width:1px; padding:2px;}*/
+frame border{border-width:1px; }
 
 selection{background-color: @link_color;}
 
@@ -236,7 +263,5 @@ radiobutton radio{border-radius:50%;}
 
 
 .subtitle image{margin:-3px;}
-
-
 
 headerbar label{margin:-1px;}
