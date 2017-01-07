@@ -1,12 +1,4 @@
 * {
-	/*-GtkExpander-expander-size: 1;
-	-GtkProgressBar-min-horizontal-bar-height: 14;
-	-GtkProgressBar-min-vertical-bar-width: 14;*/
-	
-	/*-GtkScrollbar-has-backward-stepper: false;
-	-GtkScrollbar-has-forward-stepper: false;
-	-GtkScrolledWindow-scrollbar-spacing: 1;*/
-
 	-GtkTextView-error-underline-color: @error_color;
 	-GtkToolButton-icon-spacing: 2;
 	-GtkToolItemGroup-expander-size: 1;
@@ -15,26 +7,18 @@
 	-GtkTreeView-vertical-separator: 10;
 	-GtkTreeView-row-height: 10;
 
-	/*-GtkProgressBar-min-horizontal-bar-height: 12;*/
-	/*-GtkProgressBar-min-vertical-bar-width: 12;*/
-
 	-GtkWindow-resize-grip-height: 1;
 	-GtkWindow-resize-grip-width: 1;
-	/*-WnckTasklist-fade-overlay-rect: 0;*/
 
-	/*border-width:1px;*/
+
 	border-radius: 0;
 	border-color: @border_color;
 	border-style: solid;
 	border-width:0;
-	/*background-image: none;*/
-	/*background-color: @bg_color;*/
+
 	padding: 0;
 	margin: 0;
-	/*font-size:8pt;*/
-	/*transition: none;*/
-	/*color: @text_color;*/
-	/*opacity: 1;*/
+
 	min-width: 0;
 	min-height: 0;
 	color:@text_color;
@@ -69,7 +53,7 @@ button:disabled{background-color: @bg_color_disabled;}
 button:checked{border-color:@link_color;}
 button label{padding:2px; margin:2px; color:@text_color;}
 
-image{-gtk-icon-transform: scale(0.75);}
+image{-gtk-icon-transform: scale(0.8);}
 
 
 buttonbox button label{margin-top:4px;}
@@ -85,6 +69,10 @@ tabs button{border:none; background:none; margin:-2px -2px -2px 0px; padding:0;}
 tabs button image{color: @thin_text_color;}
 tabs button:hover{ opacity: 0.8;}
 
+treeview header button:first-child{border-left-width: 0px; }
+treeview header button{border-left:1px solid @bg_color_disabled;}
+
+header button label{padding:2px 0px 0px 2px;}
 /*hide close button*/
 /*tab button{border:none; background:none;}*/
 /*tab button > image{-gtk-icon-transform: scale(0);}*/
@@ -99,7 +87,9 @@ headerbar widget.path-bar{border-width:1px;}
 .path-bar *:checked{background-color: @selected_bg_color; }
 
 
-.sidebar label{color:@thin_text_color;}
+.sidebar image{-gtk-icon-transform: scale(0.85); color:@text_color; }
+row:selected label{color:@selected_text_color;}
+.sidebar label{color:@text_color;}
 /*text{background-color: @bg_color;}*/
 
 /*toolbar,.background{background-color:@button_color;}*/
@@ -132,12 +122,12 @@ notebook header.right tab:first-child{border-top-width:0;}
 notebook header.right tab{border-top-width:1px;}
 
 /*tabs{margin:-1px;}*/
-tab{padding: 2px 10px;}
+tab{padding: 2px 2px;}
 tabs *:selected{background-color: @selected_bg_color; }
 
 /*treeview{background-color: @bg_color; padding-left: 4px;}*/
 
-row{padding: 2px;}
+row{padding: 1px 2px;}
 row box > image{margin-right: 4px;}
 image{color:@icon_color;}
 treeview button:last-child{border-right-width: 0px;}
