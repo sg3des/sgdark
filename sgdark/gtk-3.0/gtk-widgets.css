@@ -18,8 +18,8 @@
   -GtkTreeView-tree-line-pattern: '';
  
 
-	-GtkWindow-resize-grip-height: 1;
-	-GtkWindow-resize-grip-width: 1;
+	-GtkWindow-resize-grip-height: 2;
+	-GtkWindow-resize-grip-width: 2;
 
 
 	border-radius: 0;
@@ -35,11 +35,11 @@
 	color:@text_color;
 }
 
-window{background-color: @bg_color;}
+window{background-color: @bg_color; color:@base_color;}
 
 dialog,assistant,printdialog,messagedialog{background-color:@bg_color;}
 
-treeview,paned,popover,textview{background-color: @bg_color_alt;}
+treeview,popover,textview{background-color: @bg_color_alt;}
 list{background-color: @bg_color;}
 
 
@@ -98,8 +98,13 @@ header button label{padding:2px 0px 0px 2px;}
 
 headerbar,menubar{background-color:@bg_color; color: @icon_color;}
 
+toolbar image{-gtk-icon-transform: scale(0.7);}
+toolbar button{padding:0; border-width:1px; border-color: @bg_color; background-color: @bg_color; }
+toolbar button:checked{border-color:@border_color; background-color: @bg_color_dark;  }
+toolbar button box{margin:-2px;}
+toolbar separator{min-height:2px;}
 
-toolbar button{padding: 2px; border-width:0px; background-color: @bg_color; }
+
 headerbar button{border-width: 0px; padding: 2px; background-color: @bg_color; min-height: 14px;}
 headerbar button:disabled,menubar button:disabled,toolbar button:disabled{background-color: @bg_color}
 headerbar widget.path-bar{border-width:1px;}
@@ -122,30 +127,37 @@ frame list{border-width: 0;}
 /*frame box{background: @bg_color_alt;}*/
 notebook treeview,notebook scrolledwindow{border-width: 0}
 /*.frame list{border-width: 0px;}*/
-notebook{background:@bg_color; border:1px solid @border_color;}
+notebook{background:@selected_bg_color; border:1px solid @selected_bg_color;}
 notebook *:checked{background-color: @selected_bg_color;}
 /*notebook button{margin: -1px;}*/
 
 notebook header arrow{border:none;}
 notebook header button{border:none;}
-/*notebook header{margin:-1px;}*/
-notebook header.top{border-bottom-width:1px;}
-notebook header.bottom{border-top-width:1px;}
-notebook header.left{border-right-width:1px;}
-notebook header.right{border-left-width:1px;}
+
+tab{padding: 2px 4px; background-color: @bg_color_dark; border-color:@selected_bg_color;}
+/*tab:checked{ background-color: @selected_bg_color; }*/
+
+notebook header.top tab{border-width: 0 1px 1px 0;}
+notebook header.top tab:last-child{border-right-width: 0;}
+notebook header.top tab:checked{border-bottom-width: 0;}
+
+notebook header.bottom tab{border-width:1px 1px 0 0;}
+notebook header.bottom tab:last-child{border-right-width: 0;}
+notebook header.bottom tab:checked{border-top-width: 0;}
+
+notebook header.left tab{border-width:0 1px 1px 0;}
+notebook header.left tab:last-child{border-bottom-width: 0;}
+notebook header.left tab:checked{border-right-width: 0;}
+
+notebook header.right tab{border-width:0 0 1px 1px;}
+notebook header.right tab:last-child{border-bottom-width: 0;}
+notebook header.right tab:checked{border-left-width: 0;}
 
 
-notebook header.top tab{border-right-width:1px;}
-notebook header.bottom tab{border-right-width:1px;}
-notebook header.left tab{border-bottom-width:1px;}
-notebook header.right tab{border-bottom-width:1px;}
 
-/*tabs{margin:-1px;}*/
-tab{padding: 2px 2px; background-color: @bg_color_dark; border-color:@border_color;}
-tab:selected{ background-color: @selected_bg_color; }
-/*tabs *:selected{background-color: @selected_bg_color; }*/
 
-/*treeview{background-color: @bg_color; padding-left: 4px;}*/
+
+
 
 row{padding: 1px 2px;}
 row box > image{margin-right: 4px;}
@@ -176,8 +188,8 @@ stackswitcher button:checked{background-color: @insensitive_text_color;}
 /*stackswitcher{border-left:1px solid @border_color;}*/
 
 separator{background:@border_color; min-height:1px; min-width:1px;}
-.horizontal separator{margin:5px 0;}
-.vertical separator{margin:0 5px;}
+.horizontal separator{margin:6px 2px;}
+.vertical separator{margin:2px 6px;}
 
 entry{border-width: 1px; padding: 2px; margin:1px; background-color: @bg_color_alt; color: @text_color;}
 entry:disabled{border-width: 0px; background: none;}
@@ -194,7 +206,7 @@ scrolledwindow > treeview{border-width: 0px;}
 scrollbar.vertical{margin:2px 0px 0px -4px;}
 scrollbar.horizontal{margin:-4px 0px 0px 0px ;}
 scrollbar button{border:none; padding:0px; margin:0px;}
-scrollbar slider{background:@selected_bg_color; min-width:6px; min-height:6px;}
+scrollbar slider{background:@selected_bg_color; min-width:7px; min-height:7px;}
 scrollbar slider:hover{background:@highlight_bg_color;}
 scrollbar slider:active{background:@link_color;}
 
@@ -219,15 +231,15 @@ highlight{background:@link_color;}
 
 indicator{background:@link_color;}
 
-progressbar{background:@bg_color; border-width:1px;}
-progress{background:@link_color;}
+progressbar{background:@bg_color; border-width:1px; min-width: 6px; padding: 2px 0;}
+progress{background:@link_color; padding: 2px 0;}
 
 levelbar block{background:@bg_color; border-width:1px;}
 
 calendar{border-width:1px;}
 
 
-treeview button{border-width:0px 1px 1px 0px;}
+treeview header button{border-width:0px 0px 0px 0px;}
 
 
 arrow{border-width:1px; background:@bg_color;min-width:12px; min-height:12px;}
@@ -263,11 +275,13 @@ spinner:disabled{animation-name: none;}
 /*
 .spinner {background-image: none; background-color: blue; opacity: 0; -gtk-icon-source: -gtk-icontheme("process-working-symbolic");}
 .spinner:active {opacity: 1;}*/
-checkbutton,radiobutton{font-size: 100%; margin:1px;}
+check{min-width:10px; min-height:10px;-gtk-icon-transform: scale(2);  padding: 1px 0 0 1px;}
+radio{min-width:10px; min-height:10px;-gtk-icon-transform: scale(1.1);  padding: 1px 0 0 1px;}
+checkbutton,radiobutton{font-size: 100%; margin:3px;}
 checkbutton > check,radiobutton > radio{background:@bg_color_alt; border-color: @border_color; margin:0 2px; border-width:1px;}
 checkbutton:checked > check, radiobutton:checked > radio{color:@selected_text_color;}
 checkbutton:hover > check,   radiobutton:hover > radio{background:@selected_bg_color;}
-checkbutton check,radiobutton radio{-gtk-icon-transform:scale(0.75);}
+/*checkbutton check,radiobutton radio{-gtk-icon-transform:scale(0.75);}*/
 radiobutton radio{border-radius:50%;}
 /*check,radio{border-width:1px;}*/
 
