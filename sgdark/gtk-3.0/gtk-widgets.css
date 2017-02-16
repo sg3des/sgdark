@@ -164,9 +164,9 @@ notebook header.right tab:last-child{border-bottom-width: 0;}
 notebook header.right tab:checked{border-left-width: 0;}
 
 /*hide close button*/
-notebook tab button{ background:red; min-width:0px; min-height:0px; margin:9px; border:none; padding:0; }
+/*notebook tab button{ background:red; min-width:0px; min-height:0px; margin:9px; border:none; padding:0; }
 notebook tab button image{-gtk-icon-transform: scale(0); min-width:0px; min-height:0px; margin:-8px;}
-
+*/
 
 
 
@@ -185,12 +185,16 @@ paned > frame,paned > box > frame{border-width: 0;}
 paned > scrolledwindow,paned > box > scrolledwindow{border-width: 0;}
 scrolledwindow > treeview{border-width: 0;}
 
-menuitem{padding:2px 5px;}
+
 menu{border-width:1px;}
+menuitem{padding:2px 5px;}
 menuitem:hover{background-color: @selected_bg_color; color: @selected_text_color;}
 menuitem:active{background-color: @selected_bg_color; color: @link_color;}
+/*menuitem:checked{background-color: red; color: @link_color;}*/
+menuitem label{padding-right:10px;}
+menuitem check{color:@base_color;margin-right:4px; -gtk-icon-source: -gtk-icontheme("checkbox-symbolic"); -gtk-icon-transform: scale(1);}
+menuitem check:checked{color:@text_color; -gtk-icon-source: -gtk-icontheme("checkbox-checked-symbolic"); }
 
-menu menuitem label{padding-right:10px;}
 accelerator{color:@insensitive_text_color;}
 
 
@@ -294,8 +298,8 @@ spinner:disabled{animation-name: none;}
 /*
 .spinner {background-image: none; background-color: blue; opacity: 0; -gtk-icon-source: -gtk-icontheme("process-working-symbolic");}
 .spinner:active {opacity: 1;}*/
-check{min-width:10px; min-height:10px;-gtk-icon-transform: scale(2);  padding: 1px 0 0 1px;}
-radio{min-width:10px; min-height:10px;-gtk-icon-transform: scale(1.1);  padding: 1px 0 0 1px;}
+check{min-width:10px; min-height:10px; -gtk-icon-transform: scale(2);  padding: 1px 0 0 1px;}
+radio{min-width:10px; min-height:10px; -gtk-icon-transform: scale(1.1);  padding: 1px 0 0 1px;}
 checkbutton,radiobutton{font-size: 100%; margin:3px;}
 checkbutton > check,radiobutton > radio{background:@bg_color_alt; border-color: @border_color; margin:0 2px; border-width:1px;}
 checkbutton:checked > check, radiobutton:checked > radio{color:@selected_text_color;}
