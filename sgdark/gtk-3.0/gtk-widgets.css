@@ -40,6 +40,7 @@ window{background-color: @bg_color; color:@base_color;}
 dialog,assistant,printdialog,messagedialog{background-color:@bg_color;}
 
 treeview,popover,textview{background-color: @bg_color_alt;}
+.sidebar treeview{background:@bg_color;}
 list{background-color: @bg_color;}
 
 
@@ -113,6 +114,8 @@ headerbar label{margin:-1px;}
 
 
 .nemo-window .sidebar{margin: 0 -20px 0 -10px;}
+/*.nemo-window .sidebar treeview{background:@bg_color;}*/
+/*.nemo-window .sidebar widget{background:@bg_color;}*/
 .sidebar image{-gtk-icon-transform: scale(0.85); color:@text_color; }
 row:selected label{color:@selected_text_color;}
 .sidebar label{color:@text_color;}
@@ -161,8 +164,8 @@ notebook header.right tab:last-child{border-bottom-width: 0;}
 notebook header.right tab:checked{border-left-width: 0;}
 
 /*hide close button*/
-notebook tab button{ background:none; min-width:0px; min-height:0px; margin:9px; border:none; }
-notebook tab button image{-gtk-icon-transform: scale(0); min-width:0px; min-height:0px; margin:-10px;}
+notebook tab button{ background:red; min-width:0px; min-height:0px; margin:9px; border:none; padding:0; }
+notebook tab button image{-gtk-icon-transform: scale(0); min-width:0px; min-height:0px; margin:-8px;}
 
 
 
