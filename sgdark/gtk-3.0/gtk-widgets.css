@@ -122,9 +122,11 @@ row:selected label{color:@selected_text_color;}
 /*text{background-color: @bg_color;}*/
 
 /*toolbar,.background{background-color:@button_color;}*/
-/*overlay frame{border:none; background:@bg_color;}*/
+
 /*frame{border-width:1px; padding:2px;}*/
 frame border{border-width:1px; padding: 2px;}
+
+
 /*frame{}*/
 /*frame > frame{border-width: 0;}*/
 frame list{border-width: 0;}
@@ -221,14 +223,13 @@ scrolledwindow > *{border-width: 0px;}
 scrolledwindow > .frame{border-width: 0px;}
 scrolledwindow > treeview{border-width: 0px;}
 
-scrollbar.vertical{margin:2px 0px 0px -4px;}
-scrollbar.horizontal{margin:-4px 0px 0px 0px ;}
-scrollbar button{border:none; padding:0px; margin:0px;}
-scrollbar slider{background:@selected_bg_color; min-width:7px; min-height:7px;}
+
+scrollbar.vertical{margin:0px 0px 0px -3px;}
+scrollbar.horizontal{margin:-3px 0px 0px 0px ;}
+scrollbar button{border:none; padding:0; margin:0;}
+scrollbar slider{background:@selected_bg_color; min-width:6px; min-height:6px;}
 scrollbar slider:hover{background:@highlight_bg_color;}
 scrollbar slider:active{background:@link_color;}
-
-
 
 
 popover{border-width:1px;}
@@ -311,4 +312,9 @@ radiobutton radio{border-radius:50%;}
 
 
 .subtitle image{margin:-3px;}
+
+frame{border:none;}
+overlay frame border{border:none; padding: 0;}
+overlay frame border{background:@bg_color; border:none; border-radius:0;}
+overlay{border:none;}
 
