@@ -202,12 +202,15 @@ stackswitcher button:checked{background-color: @insensitive_text_color;}
 /*stackswitcher button{border-left:0px;}*/
 /*stackswitcher{border-left:1px solid @border_color;}*/
 
-separator{background:alpha(@border_color,0.5); min-height:2px; min-width:2px;}
-toolbar separator{margin: 2px 6px;}
+separator{background: @border_color; min-height:2px; min-width:2px;}
+toolbar separator{margin: 2px 6px; min-width: 1px;}
+.sidebar separator{min-height: 1px;}
+separator.horizontal{margin:0 10px;}
 menu separator{margin:0px; min-height:1px;}
 popover separator{margin:0px; min-height:1px;}
 /*.horizontal separator{margin:0px 2px;}
 .vertical separator{margin:2px 0px;}*/
+
 
 entry{border-width: 1px; padding: 2px; margin:1px; background-color: @bg_color_alt; color: @text_color;}
 entry:disabled{border-width: 0px; background: none;}

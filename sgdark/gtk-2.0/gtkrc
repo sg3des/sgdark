@@ -200,6 +200,16 @@ style "murrine-button"  = "murrine-wider" {
 	bg[PRELIGHT] = shade (1.10, @bg_color)
 	bg[ACTIVE] = shade (0.95, @bg_color)
 	bg[INSENSITIVE] = shade (0.85, @bg_color)
+
+
+	# bg[NORMAL] = shade (1.08, @bg_color)
+	# bg[PRELIGHT] = shade (1.10, @bg_color)
+	# bg[ACTIVE] = shade (0.95, @bg_color)
+	# bg[INSENSITIVE] = shade (0.85, @bg_color)
+}
+
+style "murrine-button-label" {
+	fg[ACTIVE] = @selected_bg_color
 }
 
 style "murrine-scrollbar" {
@@ -682,6 +692,8 @@ widget_class "*<GtkStatusbar>*" style "murrine-statusbar"
 widget_class "*<GtkProgress>" style "murrine-progressbar"
 widget_class "*<GtkProgressBar>" style "murrine-progressbar"
 
+widget_class "*.<GtkButton>.<GtkLabel>" style "murrine-button-label"
+
 widget_class "*<GtkComboBoxEntry>*" style "murrine-comboboxentry"
 widget_class "*<GtkCombo>*" style "murrine-comboboxentry"
 
@@ -696,6 +708,7 @@ widget_class "*GtkToolButton*" style "murrine-toolbutton"
 widget_class "*GtkToggleToolButton*" style "murrine-toolbutton"
 widget_class "*GtkMenuToolButton*" style "murrine-toolbutton"
 widget_class "*GtkToolbar*Button" style "murrine-toolbutton"
+
 
 widget_class "*.<GtkFrame>.<GtkLabel>" style "murrine-frame-title"
 widget_class "*.<GtkTreeView>*" style "murrine-treeview"
