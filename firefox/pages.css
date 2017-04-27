@@ -1,10 +1,16 @@
+
+@-moz-document regexp('.*CodeMirror.*'){
+    *{font-size:9pt;}
+}
+
 @-moz-document url(https://www.yandex.ru/) {
     .rows__bg{background-color: #252525;}
     .stripe-universal{display: none;}
     .input_theme_websearch,.input_theme_websearch.input_size_m .input__control{background-color: #111 !important; border-color: #191919 !important;}
 }
 
-@-moz-document domain(translate.google.com) {
+
+@-moz-document domain(translate.google.com), domain(translate.google.ru) {
     body{background: #333;}
     *{border-radius: 0 !important;}
     
@@ -42,7 +48,7 @@
 
 @-moz-document domain("mail.google.com"), domain("hangouts.google.com") {   
     .gbqfif, .gbqfsf,.hx,.gbqfqw,.aio,.TO .n0,.aoT,.vO{color:#ddd !important;}
-    .gb_fa .gbqfqw.gbqfqw, .gb_X .gbqfqw.gbqfqw,.aeS, .azewN{border-color:#111111 !important;}
+    .gb_fa .gbqfqw.gbqfqw, .gb_X .gbqfqw.gbqfqw,.aeS, .azewN,.J-KU-Jg-K9.aAA .aKi{border-color:#111111 !important;}
     
     .Bs,.WD,.gb_Sd,.aeN,.aRz.J-KU,.aeJ,.wl, .wn, .wo, .wp, .wq{background: #252525 !important;background-color: #252525 !important;}
     .ha,.gD,.hx .gH,.iY .md, .iY .l6, .iY .l9, .iY .ma, .iY .l8, .iY .mb,.nZ .nU, .nZ .n0{color:#ccc !important;}
@@ -92,4 +98,110 @@
     
     .a-u-H-da{background-color: #4285f4 !important;}
 
+}
+
+
+@-moz-document domain("habrahabr.ru") , domain("geektimes.ru") {
+    body.nl .layout,body.nl .layout, body.nl .layout__navbar{background:#252525;}
+    body, h1, h2, h3, h4{color:#bbb;}
+    
+    #TMpanel{background: #191919; border:none;}
+    #TMpanel .container .bmenu > a.current, .dropdown-menu li a{color:#eee;}
+    
+    body.nl .layout__navbar{border:none;}
+    
+    
+    .tabs__menu,.tabs-menu_habrahabr{background-color: #333;}
+    a.tab-item_current{background-color: #444; color:#aaa !important;}
+    .tab-item_current .tab-item__value{color:#aaa;}
+    a.tab-item{border:none;}
+    a.tab-item:hover{background-color: #555;}
+    a.tab-item{color:#999;}
+    
+    #xyz_wrapper{background: #252525 !important;}
+    .sidebar-block,.sidebar-block__title,.xyz_wrapper_inner,.postinfo-panel,.html_banner,.similar-posts,.live-broadcast,.promo-block__service,.promo-block__footer,.comment-item.is_new,.author-info,.live-broadcast.live-broadcast_geektimes,.live-broadcast.live-broadcast_habrahabr,#scroll_to_top:hover,.post-type,.sidebar_right .block{background: #212121; border-color:#191919;}
+    .postinfo-panel *,.content-list_posts .content-list__item,.live-broadcast__content,.column-wrapper_bordered,.promo-block, .promo-block *,.content-list_promo .content-list__item{border-color: #191919 !important;}
+    
+    img{opacity: 0.5;}
+    img:hover{opacity: 1;}
+    
+    .comments_list .comment_item .bad{background: #252525 !important;}
+    
+    .buttons a.button, .buttons button, .buttons input[type="button"], .buttons input[type="submit"],.toggle-menu,.toggle-menu__item-link_bordered{background: #222; border-color:#191919; color:#999;}
+    .buttons a.button:hover, .buttons button:hover, .buttons input[type="button"]:hover, .buttons input[type="submit"]:hover, a.habracut:hover,.toggle-menu__item_pagination:hover{background: #333; border-color:#191919; color:#aaa;}
+    
+    .post__title, .post__title_link{color:#bbb;}
+    .html_format h1, .html_format h2, .html_format h3, .html_format h4, .html_format h5, .html_format h6{color: #bbb;}
+    .comment-item.is_topic_starter{background: #253015;}
+    .folding-dot{background: none; display: none;}
+    .html_format code{color:#bbb;}
+    
+    body.nl .layout__cell{min-width: 0px !important;}
+    .content_left{padding-right: 0px !important;}
+    .layout__row_footer-links{display: none !important;}
+    .layout__row_footer{display: none !important;}
+    .default-block{display: none !important;}
+    .sidebar_right{display: none !important;}
+    body.nl .layout__row_navbar,.tabs-menu{background: #212121 !important; border:none;}
+    iframe{display: none !important;}
+    .html_banner_wrap, .promo-block{display: none !important; }
+    *{min-width: 0px !important;}
+
+    
+}
+
+
+@-moz-document domain("github.com") {
+
+/*     *{min-width: 0px !important;} */
+    body{min-width: 0 !important;  }
+    .container{width: calc(100% - 20px); max-width: 1000px;}
+    .reponav-item{padding: 6px;}
+/*     .news{width: calc(100% - 350px) !important; min-width: 0 !important; max-width: calc(100% - 350px) !important;}
+    .discussion-timeline{width: auto; max-width: 80% !important;} */
+
+    .filter-bar{padding: 0 !important;}
+    .repo-filterer li{width:41px !important;}
+    #your-repos-filter{margin: 5px; max-width: calc(100% - 10px);}
+/*     .dashboard-sidebar{max-width: 250px; right:0px; position: absolute !important;} */
+/*     .discussion-sidebar{max-width:120px !important; right:0px; position: absolute !important;}    */
+/*     .js-file-line-container,.files{min-width: 100% !important;} */
+/*     #new_comment_field{width: 100% !important;} */
+/*     .timeline-comment{width: 100% !important;} */
+    
+}
+
+
+@-moz-document domain("google.ru"),domain("google.com") {
+    body{overflow-x:hidden;}
+    .sfbg,.nojsv{min-width:0 !important;}
+    #searchform,#searchform *{min-width: 0 !important;}
+/*     *{min-width: 0 !important;} */
+    #center_col{margin-left: 0px !important; }
+    .hdtb-msel{margin-left: 10px !important;}
+    #swml, ._nW{margin-left: 10px!important;}
+}
+
+@-moz-document domain("rutracker.org") { 
+    #sidebar1{display: none;}
+    #idx-sidebar2{display: none;}
+    #page_footer{display: none;}
+    #logo{display: none;}
+    #latest_news{display: none;}
+    #forums_top_links{display: none;}
+}
+
+@-moz-document domain("linux.org.ru") { 
+    html, body{background: #272727;}
+    *{border-radius: 0 !important; }
+    #bd .forum table tbody tr:hover{background-color: #204474;}
+/*     *{border-color:#191919 !important;} */
+    .messages .msg, .infoblock,.boxlet{background: #2e2e2e;}
+    #bd .btn-default,#bd .forum table thead, #bd .forum table tfoot{background-color: #333;}
+    table{border-color:#191919; }
+    table *{border-color:#191919 !important; }
+    #bd .btn-selected{background-color: #666;}
+    textarea, input{color:#999 !important; font-size: 10pt; border: 1x solid #191919 !important;}
+    
+    #bd .forum table tbody td a{color:#ccc;}
 }
