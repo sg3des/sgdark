@@ -198,8 +198,8 @@ menuitem:hover{background-color: @selected_bg_color; color: @selected_text_color
 menuitem:active{background-color: @selected_bg_color; color: @link_color;}
 /*menuitem:checked{background-color: red; color: @link_color;}*/
 menuitem label{padding-right:10px;}
-menuitem check{color:@base_color;margin-right:4px; -gtk-icon-source: -gtk-icontheme("checkbox-symbolic"); -gtk-icon-transform: scale(1);}
-menuitem check:checked{color:@text_color; -gtk-icon-source: -gtk-icontheme("checkbox-checked-symbolic"); }
+menuitem check{color:@base_color;margin-right:4px; -gtk-icon-transform: scale(1);}
+menuitem check:checked{color:@text_color; -gtk-icon-source: -gtk-icontheme("gtk-apply"); }
 
 accelerator{color:@insensitive_text_color;}
 
