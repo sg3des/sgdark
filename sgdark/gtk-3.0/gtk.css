@@ -18,6 +18,7 @@
 @define-color highlight_text_color #fff;
 @define-color insensitive_text_color #555;
 @define-color link_color #204474;
+@define-color link_color_dark #194070;
 
 
 @define-color info_fg_color rgb (58, 135, 173);
