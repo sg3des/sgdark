@@ -1,0 +1,63 @@
+/********************************/
+/* iBaked V for Firefox Scrollbar {DarkState} */
+/********************************/
+/*      By DarkMorpher      */
+/********************************/
+
+/* AGENT_SHEET */
+
+scrollbar {
+    -moz-appearance: none !important;
+    background: #202020 !important;
+    border-left: 0px solid #161616 !important;
+ border-radius:0 !important;}
+
+
+scrollbar thumb {
+    -moz-appearance: none !important;
+    background: #404040 !important;
+    background-clip: padding-box !important;
+    border: none !important;}
+
+scrollbar thumb:not(:active):hover, scrollbar thumb:hover:active {
+    background: #204474 !important;
+    background-clip: padding-box !important;
+    }
+
+scrollbar thumb:active, scrollbar thumb[active="true"] {
+    background: #204474 !important;
+    background-clip: padding-box !important;
+    border: none !important;}
+
+scrollbar scrollbarbutton,
+scrollbar gripper,
+scrollcorner {
+    -moz-appearance: none !important;
+    background: #202020 !important;
+    border: none !important;}
+
+scrollbar[orient="vertical"] > scrollbarbutton {
+    min-height: 1px !important;
+    max-height: 1px !important;
+    min-width: 6px !important;
+    max-width: 6px !important;}
+
+scrollbar[orient="horizontal"] > scrollbarbutton {
+    min-height: 1px !important;
+    max-height: 1px !important;
+    min-width: 6px !important;
+    max-width: 6px !important;}
+ 
+scrollbar > scrollbarbutton[disabled="true"] {opacity: 0.8 !important;}
+
+scrollbar > scrollbarbutton:not([disabled="true"]):hover {
+    background: #204474 !important;
+    background-clip: padding-box !important;
+    border: none !important;}
+
+scrollbar > scrollbarbutton:not([disabled="true"]):hover:active,
+scrollbar > scrollbarbutton:not([disabled="true"])[active="true"] {
+    -moz-appearance: none !important;
+    background: #204474 !important;
+    background-clip: padding-box !important;
+    border: none !important;}

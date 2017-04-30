@@ -204,7 +204,7 @@ menuitem check:checked{color:@text_color; -gtk-icon-source: -gtk-icontheme("gtk-
 accelerator{color:@insensitive_text_color;}
 
 
-stackswitcher button:checked{background-color: @insensitive_text_color;}
+stackswitcher button:checked{background-color: @selected_bg_color;}
 /*stackswitcher button{border-left:0px;}*/
 /*stackswitcher{border-left:1px solid @border_color;}*/
 
@@ -244,21 +244,30 @@ popover button{padding:0px 2px;}
 popover stack{margin:-5px;}
 switch{border-width:1px; font-size:7px;}
 switch slider{background-color: @scroll_color;min-height:14px; min-width:26px;}
+switch:checked slider{background-color: @link_color;}
 
-scale{min-width:8px;min-height:8px; margin:5px;}
+scale{min-width:6px; min-height:6px; margin:5px;}
 scale trough{background-color: @bg_color; border-width: 1px;}
 /*scale:hover{background-color: @bg_color;}*/
-scale slider{background-color:@scroll_color; min-width:10px; min-height:10px; border-width:0 1px; padding:1px; margin:-4px;}
+/*scale slider{background-color:@scroll_color;  }*/
+scale slider{background-color:@bg_color_alt; border:1px solid @border_color;  min-width:7px; min-height:7px; padding:1px; margin:-4px;}
+
 slider:hover{background-color:@highlight_bg_color;}
 slider:active{background-color:@link_color;}
 scale indicator{color:@border_color; background:none;}
-highlight{background:@link_color;}
+scale highlight{background:@link_color; border-width: 1px; border: 1px solid #194070; margin:-1px;}
 
 
 indicator{background:@link_color;}
 
-progressbar{background:@bg_color; border-width:1px; min-width: 6px; padding: 2px 0;}
-progress{background:@link_color; padding: 2px 0;}
+progressbar{background:@bg_color; border-width:1px; min-width: 6px;}
+progress{background:@link_color; }
+
+progressbar.horizontal{margin:1px 0; padding:2px 1px;}
+progressbar.horizontal progress{border: 1px solid @link_color_dark; margin: -1px -2px -1px -2px; padding:2px 1px;}
+
+progressbar.vertical{margin:0 1px; padding:1px 2px;}
+progressbar.vertical progress{border: 1px solid @link_color_dark; margin: -2px -1px -2px -1px; padding:1px 2px;}
 
 levelbar block{background:@bg_color; border-width:1px;}
 
@@ -304,8 +313,10 @@ tab spinner{min-width:1px; min-height:1px; }
 /*
 .spinner {background-image: none; background-color: blue; opacity: 0; -gtk-icon-source: -gtk-icontheme("process-working-symbolic");}
 .spinner:active {opacity: 1;}*/
-check{min-width:10px; min-height:10px; -gtk-icon-transform: scale(2);  padding: 1px 0 0 1px;}
-radio{min-width:10px; min-height:10px; -gtk-icon-transform: scale(1.1);  padding: 1px 0 0 1px;}
+check:checked{-gtk-icon-source: -gtk-icontheme("gtk-apply"); -gtk-icon-transform: scale(1);}
+radio:checked{-gtk-icon-transform: scale(1);}
+check{min-width:10px; min-height:10px;  padding: 1px 0 0 1px;}
+radio{min-width:10px; min-height:10px;  padding: 1px 0 0 1px;}
 checkbutton,radiobutton{font-size: 100%; margin:3px;}
 checkbutton > check,radiobutton > radio{background:@bg_color_alt; border-color: @border_color; margin:0 2px; border-width:1px;}
 checkbutton:checked > check, radiobutton:checked > radio{color:@selected_text_color;}
