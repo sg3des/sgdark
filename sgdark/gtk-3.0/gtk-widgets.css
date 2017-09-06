@@ -227,10 +227,9 @@ scrolledwindow > .frame{border-width: 0px;}
 scrolledwindow > treeview{border-width: 0px;}
 
 
-scrollbar.vertical{margin:0px 0px 0px -3px;}
-scrollbar.horizontal{margin:-3px 0px 0px 0px ;}
-scrollbar button{border:none; padding:0; margin:0;}
-scrollbar slider{background:@selected_bg_color; min-width:6px; min-height:6px;}
+scrollbar{background: @bg_color_dark;}
+scrollbar button{border:none; /*padding:0; margin:0;*/ -gtk-icon-transform: scale(0);}
+scrollbar slider{background:@scroll_color; padding:3px;}
 scrollbar slider:hover{background:@highlight_bg_color;}
 scrollbar slider:active{background:@link_color;}
 
