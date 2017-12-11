@@ -69,7 +69,7 @@ button label{padding:0px 2px; margin:2px; color:@text_color;}
 image{-gtk-icon-transform: scale(0.8);}
 
 
-buttonbox button label{margin-top:5px;}
+buttonbox button label{margin-top:4px;}
 modelbutton{padding: 2px;}
 widget{border-color: @border_color_alt;}
 
@@ -144,8 +144,7 @@ notebook header button{border:none;}
 
 
 
-tab{padding: 2px 4px; background-color: @bg_color_dark; border-width: 0; /*border:none;*/ /* border-color:@border_color;*/}
-/*tab:checked{ background-color: @selected_bg_color; }*/
+tab{padding: 2px 4px; background-color: @bg_color_dark; border-width: 0; min-height: 14px;}
 
 notebook header.top{border-bottom: 1px solid @border_color;}
 notebook header.top tab{border-right-width: 1px;}
@@ -231,10 +230,9 @@ scrolledwindow > .frame{border-width: 0px;}
 scrolledwindow > treeview{border-width: 0px;}
 
 
-scrollbar.vertical{margin:0px 0px 0px -3px;}
-scrollbar.horizontal{margin:-3px 0px 0px 0px ;}
-scrollbar button{border:none; padding:0; margin:0;}
-scrollbar slider{background:@selected_bg_color; min-width:6px; min-height:6px;}
+scrollbar{background: @bg_color_dark;}
+scrollbar button{border:none; /*padding:0; margin:0;*/ -gtk-icon-transform: scale(0);}
+scrollbar slider{background:@scroll_color; padding:3px;}
 scrollbar slider:hover{background:@highlight_bg_color;}
 scrollbar slider:active{background:@link_color;}
 
