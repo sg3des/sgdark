@@ -1,37 +1,8 @@
-* {
-	-GtkTextView-error-underline-color: @error_color;
-	-GtkToolButton-icon-spacing: 2;
-	-GtkToolItemGroup-expander-size: 1;
-
-	-GtkTreeView-expander-size: 10;
-	/*-GtkTreeView::row-height: 0;*/
-
-	-GtkTreeView::vertical-separator=2;
-  -GtkTreeView::horizontal-separator=2;
-  
-  -GtkTreeView::fixed-height-mode=TRUE;
-
-  -GtkTreeView-horizontal-separator: 16;
-  -GtkTreeView-grid-line-width: 1;
-  -GtkTreeView-grid-line-pattern: '';
-  -GtkTreeView-tree-line-width: 1;
-  -GtkTreeView-tree-line-pattern: '';
- 
-
-	-GtkWindow-resize-grip-height: 2;
-	-GtkWindow-resize-grip-width: 2;
-
-
+*{
 	border-radius: 0;
 	border-color: @border_color;
 	border-style: solid;
-	border-width:0;
-
-	padding: 0;
-	margin: 0;
-
-	min-width: 0;
-	min-height: 0;
+	/*border-width:0;*/
 	color:@text_color;
 }
 
@@ -59,7 +30,7 @@ box:active *,entry:active *, modelbutton:active{background-color: @link_color; c
 /*label{color:@text_color;}*/
 
 
-button{border: 1px solid @border_color; background-color: @button_color; color: @text_color; padding:1px 0px;}
+button{border: 1px solid @border_color; background-color: @button_color; color: @text_color; padding:1px;}
 /*button:hover label{color: @highlight_text_color;}*/
 button:active{background-color: @selected_bg_color; color: @link_color;}
 button:disabled{background-color: @bg_color_disabled;}
@@ -92,6 +63,10 @@ treeview header button box{border-right:0.3px solid @border_color; border-left:0
 treeview.separator{min-height:2px; color:@border_color;}
 
 header button label{padding:2px 0px 0px 2px;}
+button image{margin-top: 1.5px;}
+button label{padding:0; margin:0;}
+buttonbox button label{min-height:16px;}
+
 /*hide close button*/
 /*tab button{border:none; background:none;}*/
 /*tab button > image{-gtk-icon-transform: scale(0);}*/
@@ -124,33 +99,47 @@ row:selected label{color:@selected_text_color;}
 /*toolbar,.background{background-color:@button_color;}*/
 
 /*frame{border-width:1px; padding:2px;}*/
-frame border{border-width:1px; padding: 2px;}
+frame border{border-width:1px; padding: 2px; background: @bg_color_alt;}
 
 
 /*frame{}*/
 /*frame > frame{border-width: 0;}*/
 frame list{border-width: 0;}
 /*frame box{background: @bg_color_alt;}*/
-notebook treeview,notebook scrolledwindow{border-width: 0}
+notebook treeview,notebook scrolledwindow{border-width: 0;}
 /*.frame list{border-width: 0px;}*/
-notebook{background:@selected_bg_color; border:1px solid @border_color;}
-notebook *:checked{background-color: @selected_bg_color;}
+/*notebook{background:@bg_color_alt; border:1px solid @border_color;}*/
+/*notebook *:checked{background-color: @bg_color_alt; }*/
 
 /*notebook button{margin: -1px;}*/
 
-notebook header{background:@bg_color_dark;}
+/*notebook header{background:@bg_color_dark;}*/
 notebook header arrow{border:none;}
 notebook header button{border:none;}
 
 
+dialog notebook{background:none; border: none;}
+dialog notebook header{background:none;}
+notebook header tab:first-child{border-left-width:0.5px; }
+notebook header tab{border-top-width:0.5px; border-right-width:0.5px; border-bottom:0; border-color:@bg_color_light; }
+notebook header tab:checked{background:@bg_color_light;}
+
+dialog notebook stack{border-width:1px; border-color: @bg_color_light; background: @bg_color_light;}
+
 
 tab{padding: 2px 4px; background-color: @bg_color_dark; border-width: 0; min-height: 14px;}
+notebook header tab:checked{color:@highlight_text_color;}
 
-notebook header.top{border-bottom: 1px solid @border_color;}
+/*notebook header.top{border-bottom: 1px solid @border_color;}*/
+/*notebook header.top tab{border-right-width: 1px;}*/
+/*notebook header.top tab:last-child{border-right-width: 0;}*/
+/*notebook header.top tab:checked{margin-bottom:-1px;}*/
+
+/*notebook header.top{border-bottom: 1px solid @border_color;}
 notebook header.top tab{border-right-width: 1px;}
 notebook header.top tab:last-child{border-right-width: 0;}
-notebook header.top tab:checked{margin-bottom:-1px;}
-
+notebook header.top tab:checked{margin-bottom:-1px;}*/
+/*
 notebook header.bottom{border-top: 1px solid @border_color;}
 notebook header.bottom tab{border-right-width: 1px;}
 notebook header.bottom tab:last-child{border-right-width: 0;}
@@ -166,7 +155,7 @@ notebook header.right{border-left: 1px solid @border_color;}
 notebook header.right tab{border-bottom-width: 1px;}
 notebook header.right tab:last-child{border-bottom-width: 0;}
 notebook header.right tab:checked{margin-left:-1px;}
-notebook header.right tab:checked *{margin-left:1px;}
+notebook header.right tab:checked *{margin-left:1px;}*/
 
 /*hide close button*/
 /*notebook tab button{ background:red; min-width:0px; min-height:0px; margin:9px; border:none; padding:0; }
@@ -218,7 +207,7 @@ popover separator{margin:0px; min-height:1px;}
 
 
 entry{border-width: 1px; padding: 2px; margin:1px; background-color: @bg_color_alt; color: @text_color;}
-entry:disabled{border-width: 0px; background: none;}
+entry:disabled{border-color: @bg_color_dark; background: none;}
 toolbar entry{margin:3px;}
 
 /*entry spinbutton{border-width: 0px;}*/
@@ -273,6 +262,7 @@ calendar{border-width:1px;}
 
 
 treeview header button{border-width:0px 0px 0px 0px;}
+treeview header button{margin:0; padding:0;}
 
 arrow{min-width:12px; min-height:12px; -gtk-icon-source: -gtk-icontheme("pan-down-symbolic");}
 arrow:hover{color: @selected_text_color;}
@@ -292,8 +282,8 @@ combobox entry{border-width: 0px;}
 combobox button{border-width: 0px; background: @bg_color_alt;  padding:0px;}
 
 
-spinbutton{border-width:1px;}
-spinbutton:disabled{border-width: 0px;}
+spinbutton{border-width:1px; background:@bg_color_alt;}
+spinbutton:disabled{border-color: @bg_color_dark;}
 spinbutton entry{border-width: 0 0.5px 0 0; padding: 0 3px;}
 spinbutton button{border:0px;}
 
@@ -315,7 +305,7 @@ check:checked{-gtk-icon-source: -gtk-icontheme("gtk-apply"); -gtk-icon-transform
 radio:checked{-gtk-icon-transform: scale(1);}
 check{min-width:10px; min-height:10px;  padding: 1px 0 0 1px;}
 radio{min-width:10px; min-height:10px;  padding: 1px 0 0 1px;}
-checkbutton,radiobutton{font-size: 100%; margin:3px;}
+checkbutton,radiobutton{font-size: 100%; margin:3px; background:none;}
 checkbutton > check,radiobutton > radio{background:@bg_color_alt; border-color: @border_color; margin:0 2px; border-width:1px;}
 checkbutton:checked > check, radiobutton:checked > radio{color:@selected_text_color;}
 checkbutton:hover > check,   radiobutton:hover > radio{background:@selected_bg_color;}
