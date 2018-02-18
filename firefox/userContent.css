@@ -1,0 +1,111 @@
+:root{
+  --in-content-page-color: #eee;
+  --in-content-page-background: #202020;
+  --in-content-text-color: #eee;
+  --in-content-selected-text: #fff;
+  --in-content-box-background: #fff;
+  --in-content-box-background-odd: #f3f6fa;
+  --in-content-box-background-hover: #ebebeb;
+  --in-content-box-background-active: #dadada;
+  --in-content-box-border-color: #d7d7db;
+  --in-content-item-hover: rgba(0,149,221,0.25);
+  --in-content-item-selected: #0a84ff;
+  --in-content-border-highlight: #0a84ff;
+  --in-content-border-focus: #0a84ff;
+  --in-content-border-color: #d7d7db;
+  --in-content-category-outline-focus: 1px dotted #0a84ff;
+  --in-content-category-text: rgba(12,12,13);
+  --in-content-category-text-active: #0c0c0d;
+  --in-content-category-text-selected: #0a84ff;
+  --in-content-category-text-selected-active: #0060df;
+  --in-content-category-background-hover: rgba(12,12,13,0.1);
+  --in-content-category-background-active: rgba(12,12,13,0.15);
+  --in-content-category-background-selected-hover: rgba(12,12,13,0.15);
+  --in-content-category-background-selected-active: rgba(12,12,13,0.2);
+  --in-content-tab-color: #424f5a;
+  --in-content-link-color: #0a8dff;
+  --in-content-link-color-hover: #0060df;
+  --in-content-link-color-active: #003eaa;
+  --in-content-link-color-visited: #0a8dff;
+  --in-content-primary-button-background: #0a84ff;
+  --in-content-primary-button-background-hover: #0060df;
+  --in-content-primary-button-background-active: #003EAA;
+  --in-content-table-border-dark-color: #d1d1d1;
+  --in-content-table-header-background: #0a84ff;
+}
+
+
+@-moz-document url("about:newtab"), url("about:blank")
+{
+  /* Dark backgound */
+  html, body{ background: #252525 !important; overflow: hidden;}
+  body{overflow-y: auto !important; }
+  #root{height: calc(99% - 1px) !important; }
+}
+
+@-moz-document url("about:newtab")
+{
+  /* Invert icons color to white */
+  .icon, .info-option-icon, .block-snippet-button, #onboarding-overlay-close-btn
+  {
+    -webkit-filter: invert(100%);
+  }
+
+  .icon-pin-small, .icon-topsites
+  {
+    -webkit-filter: invert(0);
+  }
+  
+  /* Dark background when hovering above the settings icon, color is inverted */
+  .prefs-button:hover
+  {
+    background-color: #BDBDBD !important;
+  }
+  
+  /* Dark backgound for all pop-ups */
+  .sidebar, .actions, .options, .card-outer, .info-option, .context-menu, #onboarding-overlay-dialog, #snippets-container
+  {
+    background: #252525 !important;
+    border-color: #727272 !important;
+  }
+  
+  /* Give top border to snippet */
+  #snippets-container
+  {
+    /*border-top: 1px solid #727272 !important;*/
+  }
+  
+  /* Dark backgound color when highlight preview image didnt load */
+  .card-preview-image-outer
+  {
+    background-color: #181818 !important;
+  }
+  
+  /* Make backgound darker instead of brighter when clicking on firfox tour */
+  #onboarding-overlay
+  {
+    background-color: rgba(20,20,20,0.9) !important;
+  }
+  
+  /* Texts */
+  h1, h4, span, #onboarding-header
+  {
+    color: #EEE !important;
+  }
+
+  p
+  {
+    color: #CCC !important;
+  }
+
+  .card-host-name
+  {
+    color: #AAA !important;
+  }
+  
+  /* Ignore search autocomplete pop-up */
+  #searchSuggestionTable span
+  {
+    color: black !important;
+  }
+}
