@@ -81,8 +81,9 @@ toolbar button box{margin:-2px;}
 toolbar separator,headerbar separator{min-height:2px; min-width: 1px; margin: 4px 0px;}
 
 
-headerbar button{border-width: 0px; padding: 2px; background-color: @bg_color; min-height: 14px;}
+headerbar button{border-width: 0px; padding: 2px 6px; background-color: @bg_color; min-height: 14px;}
 headerbar button:disabled,menubar button:disabled,toolbar button:disabled{background-color: @bg_color}
+headerbar button:checked{background-color: @bg_color_light;}
 headerbar widget.path-bar{border-width:1px;}
 headerbar label{margin:-1px;}
 .path-bar *:checked{background-color: @selected_bg_color; }
@@ -96,6 +97,12 @@ row:selected label{color:@selected_text_color;}
 .sidebar label{color:@text_color;}
 /*text{background-color: @bg_color;}*/
 
+.path-bar button{padding: 0 4px; border-right-width:1px; }
+.path-bar button:first-child{padding:0 3px; border-left-width:1px; background:@button_color;}
+.path-bar button:last-child{padding:0 3px; background:@button_color;}
+.path-bar button:checked{border-color:@border_color;}
+
+
 /*toolbar,.background{background-color:@button_color;}*/
 
 /*frame{border-width:1px; padding:2px;}*/
@@ -106,7 +113,9 @@ frame border{border-width:1px; padding: 2px; background: @bg_color_alt;}
 /*frame > frame{border-width: 0;}*/
 frame list{border-width: 0;}
 /*frame box{background: @bg_color_alt;}*/
-notebook treeview,notebook scrolledwindow{border-width: 0;}
+notebook treeview{border-width: 0;}
+/*notebook scrolledwindow{border-width: 0;}*/
+scrolledwindow .view{background:@bg_color_alt;}
 /*.frame list{border-width: 0px;}*/
 /*notebook{background:@bg_color_alt; border:1px solid @border_color;}*/
 /*notebook *:checked{background-color: @bg_color_alt; }*/
@@ -125,6 +134,7 @@ notebook header tab{border-top-width:0.5px; border-right-width:0.5px; border-bot
 notebook header tab:checked{background:@bg_color_light;}
 
 dialog notebook stack{border-width:1px; border-color: @bg_color_light; background: @bg_color_light;}
+
 
 
 tab{padding: 2px 4px; background-color: @bg_color_dark; border-width: 0; min-height: 14px;}
@@ -176,6 +186,7 @@ treeview button:last-child{border-right-width: 0px;}
 paned{border-width: 0px;}
 /*box > paned{border-width:0px;}*/
 paned > frame,paned > box > frame{border-width: 0;}
+/*paned > scrolledwindow{border-width: 0;}*/
 paned > scrolledwindow,paned > box > scrolledwindow{border-width: 0;}
 scrolledwindow > treeview{border-width: 0;}
 
