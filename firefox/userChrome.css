@@ -1,8 +1,8 @@
 
-#TabsToolbar{margin-top:-10px; width: 2000px !important;}
-#tabbrowser-tabs{background: #222; border-bottom:0px solid #111; min-height: 18px; max-height: 18px; margin-bottom: 0px !important; width: 2000px !important;}
+#TabsToolbar{margin-top:0px; width: 2000px !important; max-height: 19px !important; min-height: 19px !important;}
+#tabbrowser-tabs{background: #222; border-bottom:0px solid #111; min-height: 19px; max-height: 19px; margin: 0 !important; width: 2000px !important;}
 
-.tabbrowser-tab{box-shadow: none !important; /*border-right: 1px solid #111;*/ min-width:18px !important; overflow: hidden; box-sizing: border-box; color:#999 !important; transition-duration: 0.0001s !important; max-height: 18px !important; min-height: 18px !important; margin: 11px 0px 0px 0px !important; padding: 0 !important;}
+.tabbrowser-tab{box-shadow: none !important; /*border-right: 1px solid #111;*/ min-width:19px !important; overflow: hidden; box-sizing: border-box; color:#999 !important; transition-duration: 0.0001s !important; max-height: 19px !important; min-height: 19px !important; margin: 0 !important; padding: 0 !important;}
 .tabbrowser-tab *{padding: 0 !important}
 
  
@@ -31,15 +31,14 @@
 #new-tab-button{display: none !important; opacity: 0;}
 .tabs-newtab-button{display: none;}
 
-#nav-bar{max-height: 19px !important; height: 19px !important;  min-height: 19px !important;
-	border-radius:0px !important; padding: 0px !important; /*position: absolute !important; left:80px; width: calc(100vw - 80px) !important;*/ left: 80px; right: 0px; margin-top: 0px;}
+#nav-bar{max-height: 18px !important; height: 18px !important;  min-height: 18px !important; border-radius:0px !important; padding: 0px !important; left: 80px; right: 0px; margin-top: 0px;}
 
 #nav-bar *{border-radius: 0 !important; margin: 0 !important; padding: 0 !important; border: none !important;}
 #urlbar-container{margin: 0 !important; max-height: 19px !important; min-height: 19px !important; width: calc(100vw) !important;}
 #back-button,#forward-button,#urlbar-reload-button,#urlbar-go-button,#urlbar-stop-button{display: none;}
 
 
-#sidebar{min-width: 18px !important; width: 80px !important;}
+#sidebar{min-width: 18px !important; width: 100px !important;}
 /*sidebarheader{display: none;}*/
 
 /*#PanelUI-button{max-height: 16px !important; min-height: 16px !important; }*/
